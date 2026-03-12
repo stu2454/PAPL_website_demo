@@ -21,6 +21,13 @@
         <a href="/papl" class="nav-link">Pricing Arrangements</a>
         <a href="/docs" class="nav-link nav-link--api" target="_blank">API Docs ↗</a>
       </nav>
+      <div class="cg-toggle-wrap">
+        <span class="cg-toggle-label">+ Code Guide</span>
+        <label class="cg-toggle" title="Show AT &amp; HM Code Guide content">
+          <input type="checkbox" id="cg-toggle-input">
+          <span class="cg-toggle-slider"></span>
+        </label>
+      </div>
     </div>
   </header>
 
@@ -37,18 +44,74 @@
     </div>
   </footer>
 
+  <script src="/static/toggle.js"></script>
   <script>
+    const CG_CATEGORIES = [3, 5, 6];
     const itemNumber = window.location.pathname.split('/catalogue/')[1];
 
+    // Load item, then conditionally load Code Guide sections
     fetch(`/api/support-items/${itemNumber}`)
       .then(r => r.ok ? r.json() : Promise.reject(r.status))
-      .then(renderItem)
-      .catch(err => {
+      .then(item => {
+        renderItem(item);
+        initToggle(() => {
+          const panel = document.getElementById('cg-panel-container');
+          if (panel) panel.style.display = cgEnabled() ? '' : 'none';
+        });
+        if (CG_CATEGORIES.includes(item.support_category.number)) {
+          loadCodeGuide(item.support_category.number);
+        }
+      })
+      .catch(() => {
         document.getElementById('item-content').innerHTML =
           `<div class="error">Item not found: ${itemNumber}</div>`;
       });
 
-    function priceTable(pl) {
+    async function loadCodeGuide(categoryNumber) {
+      const res = await fetch(`/api/atcg/sections?category=${categoryNumber}`);
+      const sections = await res.json();
+      if (!sections.length) return;
+
+      // Fetch content for the most specific section (last in list)
+      // and the intro/claiming rules
+      const toFetch = sections.filter(s =>
+        ['introduction', 'general-claiming-rules'].includes(s.slug) === false
+      ).slice(0, 2).concat(
+        sections.filter(s => s.slug === 'general-claiming-rules')
+      );
+
+      const contents = await Promise.all(
+        toFetch.map(s => fetch(`/api/atcg/${s.slug}`).then(r => r.json()))
+      );
+
+      renderCodeGuidePanel(contents);
+    }
+
+    function renderCodeGuidePanel(sections) {
+      const container = document.getElementById('cg-panel-container');
+      if (!container) return;
+
+      const entries = sections.map(s => `
+        <div class="cg-section-entry">
+          <h4>${s.title}</h4>
+          <div class="cg-section-body">${s.content_html}</div>
+          <a class="cg-section-link" href="/api/atcg/${s.slug}" target="_blank">View full section as JSON ↗</a>
+        </div>
+      `).join('');
+
+      container.innerHTML = `
+        <div class="cg-panel">
+          <div class="cg-panel-header">
+            <span class="cg-panel-badge">+ Code Guide</span>
+            <span class="cg-panel-title">AT &amp; HM Code Guide — relevant guidance for this item</span>
+          </div>
+          <div class="cg-panel-sections">${entries}</div>
+        </div>
+      `;
+      container.style.display = cgEnabled() ? '' : 'none';
+    }
+
+    function priceTable(pl, unitLabel) {
       if (!pl) return '<p class="muted">No price limits — this item requires a quote.</p>';
       const states = ['ACT','NSW','NT','QLD','SA','TAS','VIC','WA'];
       const stateRows = states
@@ -61,7 +124,7 @@
       ].join('');
       return `
         <table class="price-table">
-          <thead><tr><th>Jurisdiction</th><th>Price limit (per ${document.querySelector('.unit-label')?.textContent || 'unit'})</th></tr></thead>
+          <thead><tr><th>Jurisdiction</th><th>Price limit (per ${unitLabel})</th></tr></thead>
           <tbody>${stateRows}${remoteRows}</tbody>
         </table>`;
     }
@@ -77,9 +140,7 @@
       const legacyBanner = item.legacy
         ? '<div class="alert alert--warning">This is a legacy (deactivated) support item. New service bookings should not be created against it.</div>'
         : '';
-      const typeBadge = item.type
-        ? `<span class="type-badge">${item.type}</span>`
-        : '';
+      const typeBadge = item.type ? `<span class="type-badge">${item.type}</span>` : '';
 
       document.getElementById('item-content').innerHTML = `
         ${legacyBanner}
@@ -124,8 +185,10 @@
 
         <div class="item-section">
           <h2>Price limits</h2>
-          ${priceTable(item.price_limits)}
+          ${priceTable(item.price_limits, item.unit_label)}
         </div>
+
+        <div id="cg-panel-container"></div>
 
         <div class="item-section item-section--api">
           <h2>API access</h2>

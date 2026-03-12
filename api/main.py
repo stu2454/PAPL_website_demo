@@ -3,7 +3,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pathlib import Path
 
-from api.routes import catalogue, papl
+from api.routes import catalogue, papl, atcg
 
 app = FastAPI(
     title="NDIS Pricing Artefacts API",
@@ -20,6 +20,7 @@ app = FastAPI(
 
 app.include_router(catalogue.router)
 app.include_router(papl.router)
+app.include_router(atcg.router)
 
 # Serve frontend static files
 # Try multiple path strategies to handle different deployment environments

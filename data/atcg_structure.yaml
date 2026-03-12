@@ -1,0 +1,257 @@
+title: NDIS AT, Home Modifications and Consumables Code Guide 2025-26
+version: '2.0'
+source: NDIS Assistive Technology Home Modifications and Consumables Code Guide 2025-26
+  v2.0 (2).docx
+sections:
+- title: preamble
+  slug: preamble
+  file: atcg/preamble.md
+  headings: []
+  relevant_categories: []
+- title: Introduction
+  slug: introduction
+  file: atcg/introduction.md
+  headings:
+  - level: 1
+    text: Introduction
+    anchor: introduction
+  - level: 2
+    text: Support Purpose
+    anchor: support-purpose
+  - level: 2
+    text: Support Categories aligned to the NDIS Outcomes Framework
+    anchor: support-categories-aligned-to-the-ndis-outcomes-framework
+  - level: 2
+    text: Participant budgets are allocated according to Support Purpose
+    anchor: participant-budgets-are-allocated-according-to-support-purpose
+  - level: 2
+    text: Assessment, Training, or Fitting by professional
+    anchor: assessment-training-or-fitting-by-professional
+  - level: 2
+    text: Assistive Technology Mentors (AT Mentors)
+    anchor: assistive-technology-mentors-at-mentors
+  - level: 2
+    text: Support Item
+    anchor: support-item
+  - level: 2
+    text: Units of Measure
+    anchor: units-of-measure
+  relevant_categories:
+  - 3
+  - 5
+  - 6
+- title: General Claiming Rules
+  slug: general-claiming-rules
+  file: atcg/general-claiming-rules.md
+  headings:
+  - level: 1
+    text: General Claiming Rules
+    anchor: general-claiming-rules
+  - level: 2
+    text: Service Bookings
+    anchor: service-bookings
+  - level: 2
+    text: Quoting for AT or HM
+    anchor: quoting-for-at-or-hm
+  - level: 2
+    text: Claiming for support items that are subject to quotation
+    anchor: claiming-for-support-items-that-are-subject-to-quotation
+  - level: 2
+    text: Claiming for support items where notional unit prices apply
+    anchor: claiming-for-support-items-where-notional-unit-prices-apply
+  - level: 2
+    text: Prepayments
+    anchor: prepayments
+  - level: 2
+    text: Subscription services
+    anchor: subscription-services
+  - level: 2
+    text: Co-payments for Capital items, including Assistive Technology
+    anchor: co-payments-for-capital-items-including-assistive-technology
+  - level: 2
+    text: Other Fees and Charges
+    anchor: other-fees-and-charges
+  - level: 2
+    text: Goods and Services Tax (GST)
+    anchor: goods-and-services-tax-gst
+  relevant_categories:
+  - 3
+  - 5
+  - 6
+- title: Low cost assistive technology (mostly items <$1,500)
+  slug: low-cost-assistive-technology-mostly-items-1500
+  file: atcg/low-cost-assistive-technology-mostly-items-1500.md
+  headings:
+  - level: 1
+    text: Low cost assistive technology (mostly items <$1,500)
+    anchor: low-cost-assistive-technology-mostly-items-1500
+  - level: 2
+    text: Participants who are self-managing low-cost AT
+    anchor: participants-who-are-self-managing-low-cost-at
+  - level: 2
+    text: Participants whose funds are plan-managed
+    anchor: participants-whose-funds-are-plan-managed
+  - level: 2
+    text: Participants whose funds are agency-managed
+    anchor: participants-whose-funds-are-agency-managed
+  relevant_categories:
+  - 5
+- title: untitled
+  slug: untitled
+  file: atcg/untitled.md
+  headings: []
+  relevant_categories: []
+- title: Repairs and Maintenance
+  slug: repairs-and-maintenance
+  file: atcg/repairs-and-maintenance.md
+  headings:
+  - level: 1
+    text: Repairs and Maintenance
+    anchor: repairs-and-maintenance
+  relevant_categories:
+  - 5
+- title: Rental Supports
+  slug: rental-supports
+  file: atcg/rental-supports.md
+  headings:
+  - level: 1
+    text: Rental Supports
+    anchor: rental-supports
+  relevant_categories:
+  - 5
+- title: Delivery Supports
+  slug: delivery-supports
+  file: atcg/delivery-supports.md
+  headings:
+  - level: 1
+    text: Delivery Supports
+    anchor: delivery-supports
+  relevant_categories:
+  - 5
+- title: untitled
+  slug: untitled-1
+  file: atcg/untitled-1.md
+  headings: []
+  relevant_categories: []
+- title: Consumables (Support Category 03)
+  slug: consumables-support-category-03
+  file: atcg/consumables-support-category-03.md
+  headings:
+  - level: 1
+    text: Consumables (Support Category 03)
+    anchor: consumables-support-category-03
+  - level: 2
+    text: Continence related equipment
+    anchor: continence-related-equipment
+  - level: 2
+    text: Equipment for eating and drinking
+    anchor: equipment-for-eating-and-drinking
+  - level: 2
+    text: Disability-related Health Equipment and Consumables
+    anchor: disability-related-health-equipment-and-consumables
+  relevant_categories:
+  - 3
+- title: untitled
+  slug: untitled-2
+  file: atcg/untitled-2.md
+  headings: []
+  relevant_categories: []
+- title: Capital Supports (Assistive Technology – Support Category 05)
+  slug: capital-supports-assistive-technology-support-category-05
+  file: atcg/capital-supports-assistive-technology-support-category-05.md
+  headings:
+  - level: 1
+    text: Capital Supports (Assistive Technology – Support Category 05)
+    anchor: capital-supports-assistive-technology-support-category-05
+  - level: 2
+    text: Assistive products for household tasks and access
+    anchor: assistive-products-for-household-tasks-and-access
+  - level: 2
+    text: Assistive products for personal care and safety
+    anchor: assistive-products-for-personal-care-and-safety
+  - level: 3
+    text: Beds and pressure care mattresses and accessories
+    anchor: beds-and-pressure-care-mattresses-and-accessories
+  - level: 3
+    text: Equipment or aids for dressing or specialised clothing
+    anchor: equipment-or-aids-for-dressing-or-specialised-clothing
+  - level: 3
+    text: Specialised household furniture
+    anchor: specialised-household-furniture
+  - level: 3
+    text: Bathroom and toilet equipment
+    anchor: bathroom-and-toilet-equipment
+  - level: 3
+    text: Personal Alarms
+    anchor: personal-alarms
+  - level: 3
+    text: Respiration & Circulation Equipment
+    anchor: respiration-circulation-equipment
+  - level: 2
+    text: Communication and information equipment
+    anchor: communication-and-information-equipment
+  - level: 2
+    text: Assistive products for hearing
+    anchor: assistive-products-for-hearing
+  - level: 2
+    text: Assistive products for vision
+    anchor: assistive-products-for-vision
+  - level: 2
+    text: Assistance Animals
+    anchor: assistance-animals
+  - level: 2
+    text: Personal mobility equipment
+    anchor: personal-mobility-equipment
+  - level: 3
+    text: Transfer equipment
+    anchor: transfer-equipment
+  - level: 3
+    text: Equipment related to walking
+    anchor: equipment-related-to-walking
+  - level: 3
+    text: Specialised seating for wheelchairs and other wheeled mobility equipment
+    anchor: specialised-seating-for-wheelchairs-and-other-wheeled-mobility-equipment
+  - level: 3
+    text: Specialised wheeled mobility
+    anchor: specialised-wheeled-mobility
+  - level: 3
+    text: Wheelchairs and scooters
+    anchor: wheelchairs-and-scooters
+  - level: 2
+    text: Prosthetics and orthotics
+    anchor: prosthetics-and-orthotics
+  - level: 2
+    text: Vehicle modifications
+    anchor: vehicle-modifications
+  - level: 2
+    text: Assistive equipment for recreation
+    anchor: assistive-equipment-for-recreation
+  relevant_categories:
+  - 5
+- title: untitled
+  slug: untitled-3
+  file: atcg/untitled-3.md
+  headings: []
+  relevant_categories: []
+- title: Home Modifications (Support Category 06)
+  slug: home-modifications-support-category-06
+  file: atcg/home-modifications-support-category-06.md
+  headings:
+  - level: 1
+    text: Home Modifications (Support Category 06)
+    anchor: home-modifications-support-category-06
+  - level: 2
+    text: Home modifications
+    anchor: home-modifications
+  relevant_categories:
+  - 6
+- title: 'Appendix A: History of Changes to the NDIS ATHM and Consumables Code Guide
+    2025-26'
+  slug: appendix-a-history-of-changes-to-the-ndis-athm-and-consumables-code-guide-2025-26
+  file: atcg/appendix-a-history-of-changes-to-the-ndis-athm-and-consumables-code-guide-2025-26.md
+  headings:
+  - level: 1
+    text: 'Appendix A: History of Changes to the NDIS ATHM and Consumables Code Guide
+      2025-26'
+    anchor: appendix-a-history-of-changes-to-the-ndis-athm-and-consumables-code-guide-2025-26
+  relevant_categories: []

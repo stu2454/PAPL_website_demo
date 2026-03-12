@@ -917,3 +917,173 @@ code {
   .feature-grid { grid-template-columns: 1fr; }
   .search-bar { flex-direction: column; }
 }
+
+/* ── Code Guide toggle ──────────────────────────────── */
+
+.cg-toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+.cg-toggle-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: rgba(255,255,255,0.6);
+  white-space: nowrap;
+}
+
+.cg-toggle {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.cg-toggle input { opacity: 0; width: 0; height: 0; }
+
+.cg-toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cg-toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.cg-toggle input:checked + .cg-toggle-slider { background: var(--color-accent); }
+.cg-toggle input:checked + .cg-toggle-slider::before { transform: translateX(16px); }
+
+/* ── Code Guide panel (item detail & PAPL reader) ───── */
+
+.cg-panel {
+  background: #f0f8f7;
+  border: 1px solid #b2dbd9;
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cg-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #b2dbd9;
+}
+
+.cg-panel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--color-accent);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 99px;
+}
+
+.cg-panel-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #005c55;
+}
+
+.cg-panel-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cg-section-entry h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #005c55;
+  margin-bottom: 0.4rem;
+}
+
+.cg-section-body {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  line-height: 1.65;
+}
+
+.cg-section-body h1,
+.cg-section-body h2 { font-size: 0.95rem; font-weight: 700; margin: 0.75rem 0 0.4rem; color: #005c55; }
+.cg-section-body h3 { font-size: 0.875rem; font-weight: 700; margin: 0.6rem 0 0.3rem; }
+.cg-section-body p  { margin: 0 0 0.5rem; }
+.cg-section-body ul { margin: 0 0 0.5rem 1.25rem; }
+.cg-section-body li { margin-bottom: 0.2rem; }
+.cg-section-body table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin: 0.5rem 0 0.75rem; }
+.cg-section-body th  { background: #005c55; color: white; padding: 0.4rem 0.6rem; text-align: left; }
+.cg-section-body td  { padding: 0.4rem 0.6rem; border-bottom: 1px solid #b2dbd9; }
+.cg-section-body tr:nth-child(even) td { background: #e6f5f4; }
+
+.cg-section-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-top: 0.5rem;
+}
+
+/* PAPL sidebar Code Guide section */
+.papl-nav-divider {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  padding: 0.75rem 0.75rem 0.25rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.papl-nav-item--cg {
+  border-left: 3px solid var(--color-accent);
+  margin-left: 0;
+  padding-left: calc(0.75rem - 3px);
+  color: #005c55;
+}
+
+.papl-nav-item--cg:hover { background: var(--color-accent-light); }
+.papl-nav-item--cg.active { background: var(--color-accent-light); color: var(--color-accent); font-weight: 700; }
+
+/* Cat badge on catalogue items */
+.cat-cg-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  border: 1px solid #b2dbd9;
+  padding: 0.1rem 0.4rem;
+  border-radius: 99px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}

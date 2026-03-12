@@ -46,3 +46,28 @@ registration_groups: list[dict] = catalogue["registration_groups"]
 
 papl_structure = _load_papl_structure()
 papl_content: dict[str, str] = _load_papl_content(papl_structure)
+
+
+def _load_atcg_structure():
+    path = DATA_DIR / "atcg_structure.yaml"
+    with open(path, encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def _load_atcg_content(structure):
+    content = {}
+    for section in structure["sections"]:
+        path = DATA_DIR / section["file"]
+        if path.exists():
+            content[section["slug"]] = path.read_text(encoding="utf-8")
+    return content
+
+
+atcg_structure = _load_atcg_structure()
+atcg_content: dict[str, str] = _load_atcg_content(atcg_structure)
+
+# Map support category number → relevant ATCG section slugs
+atcg_by_category: dict[int, list[dict]] = {}
+for _section in atcg_structure["sections"]:
+    for _cat in _section.get("relevant_categories", []):
+        atcg_by_category.setdefault(_cat, []).append(_section)

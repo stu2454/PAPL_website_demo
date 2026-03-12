@@ -1,5 +1,7 @@
 /* Catalogue page — search, filter, paginate */
 
+const CG_CATEGORIES = [3, 5, 6]; // categories covered by the AT Code Guide
+
 const PAGE_SIZE = 50;
 let state = {
   q: '',
@@ -23,6 +25,9 @@ window.addEventListener('DOMContentLoaded', async () => {
   await populateRegGroups();
   applyStateToForm();
   fetchAndRender();
+
+  // Toggle persistence
+  initToggle(() => fetchAndRender());
 
   // Event listeners
   let searchTimer;
@@ -136,6 +141,11 @@ async function populateRegGroups() {
 
 // --- Rendering ---
 
+function cgBadge(item) {
+  if (!cgEnabled() || !CG_CATEGORIES.includes(item.support_category_number)) return '';
+  return '<span class="cat-cg-badge" title="AT &amp; HM Code Guide applies">Code Guide</span>';
+}
+
 function typePillHtml(item) {
   if (item.legacy) return '<span class="type-pill type-pill--legacy">Legacy</span>';
   const t = item.type || '';
@@ -162,7 +172,7 @@ function renderTable(data) {
 
     return `<tr onclick="window.location='/catalogue/${encodeURIComponent(item.support_item_number)}'">
       <td><span class="item-num">${item.support_item_number}</span></td>
-      <td>${item.name}</td>
+      <td>${item.name}${cgBadge(item)}</td>
       <td>${item.support_category_number}. ${item.support_category_name}</td>
       <td>${item.unit_label}</td>
       <td class="price-cell">${price}</td>
