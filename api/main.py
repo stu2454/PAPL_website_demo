@@ -14,7 +14,7 @@ app = FastAPI(
         "are maintained in machine-readable formats rather than static Word/Excel files."
     ),
     version="0.1.0",
-    contact={"name": "NDIA Pricing Team"},
+    contact={"name": "Markets Delivery Branch"},
     license_info={"name": "CC BY 4.0", "url": "https://creativecommons.org/licenses/by/4.0/"},
 )
 
