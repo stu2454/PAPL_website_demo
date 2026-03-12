@@ -22,8 +22,13 @@ app.include_router(catalogue.router)
 app.include_router(papl.router)
 
 # Serve frontend static files
-# resolve() ensures absolute path regardless of Render's working directory
-FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
+# Try multiple path strategies to handle different deployment environments
+_here = Path(__file__).resolve().parent  # api/
+_candidates = [
+    _here.parent / "frontend",       # repo root / frontend (most common)
+    Path.cwd() / "frontend",         # cwd / frontend (Render fallback)
+]
+FRONTEND_DIR = next((p for p in _candidates if p.is_dir()), _here.parent / "frontend")
 app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR / "static")), name="static")
 
 

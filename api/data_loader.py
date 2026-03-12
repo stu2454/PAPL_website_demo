@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import yaml
 
-DATA_DIR = Path(__file__).parent.parent / "data"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 
 
 def _load_catalogue():
