@@ -10,8 +10,6 @@ router = APIRouter(prefix="/api/papl", tags=["PAPL Documentation"])
 # We replace the stub body with the full merged Code Guide content.
 ATCG_MERGE: dict[str, list[str]] = {
     "capital-assistive-technology": [
-        "introduction",
-        "general-claiming-rules",
         "low-cost-assistive-technology-mostly-items-1500",
         "repairs-and-maintenance",
         "rental-supports",
