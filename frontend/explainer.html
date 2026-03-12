@@ -81,7 +81,7 @@
               <div class="format-badge">YAML</div>
               <h3>Document structure</h3>
               <p>The outline and metadata of each document — section titles, slugs, headings, and (for the Code Guide) which support categories each section applies to — is stored as YAML.</p>
-              <p>This powers the sidebar navigation and the contextual Code Guide integration without any hardcoding in the application.</p>
+              <p>This powers the sidebar navigation and the Code Guide content merging without any hardcoding in the application.</p>
             </div>
           </div>
         </div>
@@ -114,7 +114,7 @@
               <div class="step-num">3</div>
               <div class="step-body">
                 <h3>AT &amp; HM Code Guide extraction</h3>
-                <p>The same process is applied to the Assistive Technology, Home Modifications and Consumables Code Guide. An additional metadata field — <code>relevant_categories</code> — maps each section to the support categories it covers (03, 05, 06). This powers the contextual Code Guide panel.</p>
+                <p>The same process is applied to the Assistive Technology, Home Modifications and Consumables Code Guide. An additional metadata field — <code>relevant_categories</code> — maps each section to the support categories it covers (03, 05, 06). The API merges this content directly into the corresponding PAPL sections at serve time.</p>
                 <p class="step-detail">Script: <code>scripts/extract_atcg.py</code> → <code>data/atcg/*.md</code> + <code>data/atcg_structure.yaml</code></p>
               </div>
             </div>
@@ -159,8 +159,8 @@
             </div>
             <div class="feature-card">
               <div class="feature-icon">🗂️</div>
-              <h3>Contextual surfacing</h3>
-              <p>The Code Guide toggle demonstrates how multiple documents can be surfaced contextually — the right guidance at the right moment — rather than requiring users to locate and cross-reference separate PDFs.</p>
+              <h3>Document integration</h3>
+              <p>The AT, HM and Consumables Code Guide content is merged directly into the relevant PAPL sections at serve time — the right guidance in the right place, without requiring users to locate and cross-reference separate PDFs.</p>
             </div>
           </div>
         </div>
