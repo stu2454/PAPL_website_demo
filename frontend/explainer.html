@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — NDIS Pricing Exemplar</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a href="/" style="text-decoration:none;color:inherit">
+          <span class="brand-label">NDIS Pricing</span>
+          <span class="brand-tag">Digital Exemplar</span>
+        </a>
+      </div>
+      <nav class="site-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/catalogue" class="nav-link">Support Catalogue</a>
+        <a href="/papl" class="nav-link">Pricing Arrangements</a>
+        <a href="/explainer" class="nav-link active">How It Works</a>
+        <a href="/docs" class="nav-link nav-link--api" target="_blank">API Docs ↗</a>
+      </nav>
+      <div class="cg-toggle-wrap">
+        <span class="cg-toggle-label">+ Code Guide</span>
+        <label class="cg-toggle" title="Show AT &amp; HM Code Guide content">
+          <input type="checkbox" id="cg-toggle-input">
+          <span class="cg-toggle-slider"></span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding: 3rem 0;">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-eyebrow">Proof of concept · NDIA Markets Delivery Branch</p>
+          <h1 class="hero-heading" style="font-size:2rem">From static documents<br>to digital-first data</h1>
+          <p class="hero-lead">
+            How we converted the NDIS Pricing Arrangements and Price Limits and Support Catalogue
+            from Word and Excel files into structured, queryable, API-accessible information.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--color-bg-white); padding: 3rem 0;">
+      <div class="container" style="max-width: 860px;">
+
+        <!-- The problem -->
+        <div class="explainer-section">
+          <h2 class="section-heading">The starting point</h2>
+          <p>The NDIS pricing artefacts — the Pricing Arrangements and Price Limits (PAPL) and Support Catalogue — are published as a Word document and an Excel spreadsheet. They are among the most downloaded documents on the NDIS website.</p>
+          <p>While these formats are familiar, they create a number of limitations:</p>
+          <ul class="explainer-list">
+            <li>Users must download and manually search large files to find the information they need</li>
+            <li>Every update requires re-publishing complete new versions of each file</li>
+            <li>Version history is managed through filename conventions (e.g. <code>v1.1_0.docx</code>) rather than a proper audit trail</li>
+            <li>Provider portals and other systems that need pricing data must re-key it manually — there is no machine-readable source</li>
+            <li>There is no way to filter, compare, or query the data without opening the file</li>
+          </ul>
+        </div>
+
+        <div class="explainer-divider"></div>
+
+        <!-- The approach -->
+        <div class="explainer-section">
+          <h2 class="section-heading">The digital-first approach</h2>
+          <p>In a digital-first model, <strong>structured data is the master copy</strong>. The Word document and Excel spreadsheet become outputs — generated from the source data — rather than the source of truth themselves.</p>
+          <p>This exemplar uses three structured formats, each suited to a different type of content:</p>
+
+          <div class="format-grid">
+            <div class="format-card">
+              <div class="format-badge">JSON</div>
+              <h3>Support Catalogue</h3>
+              <p>Each of the 635 current support items is represented as a structured JSON object with typed fields for price limits by jurisdiction, claiming rules, registration group, unit, and effective dates.</p>
+              <p>This makes the data immediately queryable — filter by category, search by name, look up a single item by number.</p>
+            </div>
+            <div class="format-card">
+              <div class="format-badge">Markdown</div>
+              <h3>Pricing Arrangements text</h3>
+              <p>The narrative and policy content of the PAPL — introductions, explanations, claiming rules — is stored as Markdown. Each top-level section becomes a separate file.</p>
+              <p>Markdown is human-readable as plain text, renderable as HTML for the web, and convertible back to Word or PDF when needed.</p>
+            </div>
+            <div class="format-card">
+              <div class="format-badge">YAML</div>
+              <h3>Document structure</h3>
+              <p>The outline and metadata of each document — section titles, slugs, headings, and (for the Code Guide) which support categories each section applies to — is stored as YAML.</p>
+              <p>This powers the sidebar navigation and the contextual Code Guide integration without any hardcoding in the application.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="explainer-divider"></div>
+
+        <!-- The conversion -->
+        <div class="explainer-section">
+          <h2 class="section-heading">How the conversion works</h2>
+          <p>This exemplar was built by extracting content from the existing source files using Python scripts. This is a one-time process each time a new version is published.</p>
+
+          <div class="step-list">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h3>Support Catalogue extraction</h3>
+                <p>The Excel file is read row by row. Each support item becomes a structured JSON object. Price limits are normalised into a per-jurisdiction map. Claiming rule flags (Y/N/NA) are converted to typed booleans. Reference tables for categories and registration groups are deduplicated automatically.</p>
+                <p class="step-detail">Script: <code>scripts/extract_catalogue.py</code> → <code>data/support_catalogue.json</code></p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h3>PAPL document extraction</h3>
+                <p>The Word document is parsed paragraph by paragraph. Heading styles (Heading 1–5) become Markdown headings. Tables are converted to Markdown table syntax. Each top-level section (Heading 1) becomes its own Markdown file, and the document outline is written to a YAML index.</p>
+                <p class="step-detail">Script: <code>scripts/extract_papl.py</code> → <code>data/papl/*.md</code> + <code>data/papl_structure.yaml</code></p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h3>AT &amp; HM Code Guide extraction</h3>
+                <p>The same process is applied to the Assistive Technology, Home Modifications and Consumables Code Guide. An additional metadata field — <code>relevant_categories</code> — maps each section to the support categories it covers (03, 05, 06). This powers the contextual Code Guide panel.</p>
+                <p class="step-detail">Script: <code>scripts/extract_atcg.py</code> → <code>data/atcg/*.md</code> + <code>data/atcg_structure.yaml</code></p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h3>API layer</h3>
+                <p>A FastAPI application loads all structured data into memory at startup and exposes it through a REST API with full OpenAPI documentation. Data is filterable, searchable, and accessible per-item — capabilities that are impossible with a static file download.</p>
+                <p class="step-detail">See <a href="/docs" target="_blank">API documentation →</a></p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h3>Web interface</h3>
+                <p>The same API powers this website. The Support Catalogue browser, PAPL reader, and item detail pages all fetch data from the API at runtime — the same endpoints available to any external system or provider wanting programmatic access.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="explainer-divider"></div>
+
+        <!-- What this enables -->
+        <div class="explainer-section">
+          <h2 class="section-heading">What this makes possible</h2>
+          <div class="feature-grid" style="margin-top: 1.5rem;">
+            <div class="feature-card">
+              <div class="feature-icon">🔁</div>
+              <h3>Single source of truth</h3>
+              <p>The structured data files are the authoritative version. The website, API, and any future static document exports are all generated from the same source — eliminating dual-maintenance.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📋</div>
+              <h3>Proper version control</h3>
+              <p>Changes to pricing data are tracked in Git. Every update is a reviewable diff. The full history of what changed, when, and why is available — far more rigorous than filename-based versioning.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔌</div>
+              <h3>System integration</h3>
+              <p>Provider portals, participant tools, and internal systems can query pricing data directly via the API — no re-keying, no risk of transcription errors, always current.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🗂️</div>
+              <h3>Contextual surfacing</h3>
+              <p>The Code Guide toggle demonstrates how multiple documents can be surfaced contextually — the right guidance at the right moment — rather than requiring users to locate and cross-reference separate PDFs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="explainer-divider"></div>
+
+        <div class="explainer-section">
+          <h2 class="section-heading">What this exemplar is not</h2>
+          <p>This is a proof of concept, not a production system. It demonstrates the approach and the user experience, but a production implementation would require:</p>
+          <ul class="explainer-list">
+            <li>Formal content governance — who can update the source data, what review process applies</li>
+            <li>Security review of the API (authentication, rate limiting, access controls)</li>
+            <li>Integration with existing publishing and CMS workflows</li>
+            <li>Accessibility audit of the web interface</li>
+            <li>Legal review of content representation and liability for data accuracy</li>
+          </ul>
+          <p>The exemplar is intended to reduce uncertainty about <em>whether</em> the approach is feasible — not to be the final implementation.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Markets Delivery Branch · Digital-first exemplar · Data sourced from NDIS Support Catalogue and Pricing Arrangements 2025-26 v1.1</p>
+    </div>
+  </footer>
+
+  <script src="/static/toggle.js"></script>
+  <script>initToggle();</script>
+
+  <style>
+    .explainer-section { margin-bottom: 2.5rem; }
+    .explainer-section p { font-size: 0.9375rem; line-height: 1.75; margin-bottom: 0.9rem; color: var(--color-text); }
+    .explainer-list { margin: 0.5rem 0 0.9rem 1.5rem; }
+    .explainer-list li { font-size: 0.9375rem; line-height: 1.7; margin-bottom: 0.4rem; }
+    .explainer-divider { border: none; border-top: 1px solid var(--color-border); margin: 2.5rem 0; }
+
+    .format-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+    .format-card { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; }
+    .format-badge { display: inline-block; font-family: 'SF Mono','Fira Code',monospace; font-size: 0.75rem; font-weight: 700; background: var(--color-primary); color: white; padding: 0.2rem 0.6rem; border-radius: var(--radius); margin-bottom: 0.75rem; letter-spacing: 0.05em; }
+    .format-card h3 { font-size: 1rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.5rem; }
+    .format-card p { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.65; margin-bottom: 0.5rem; }
+
+    .step-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.25rem; }
+    .step { display: grid; grid-template-columns: 40px 1fr; gap: 1rem; align-items: start; }
+    .step-num { width: 40px; height: 40px; background: var(--color-accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; flex-shrink: 0; }
+    .step-body h3 { font-size: 1rem; font-weight: 700; color: var(--color-primary); margin-bottom: 0.4rem; }
+    .step-body p { font-size: 0.875rem; line-height: 1.65; color: var(--color-text); margin-bottom: 0.35rem; }
+    .step-detail { color: var(--color-text-muted) !important; font-size: 0.8rem !important; }
+  </style>
+</body>
+</html>

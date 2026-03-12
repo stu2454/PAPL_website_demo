@@ -57,3 +57,8 @@ def serve_papl():
 @app.get("/papl/{slug}", include_in_schema=False)
 def serve_papl_section(slug: str):
     return FileResponse(FRONTEND_DIR / "papl.html")
+
+
+@app.get("/explainer", include_in_schema=False)
+def serve_explainer():
+    return FileResponse(FRONTEND_DIR / "explainer.html")
