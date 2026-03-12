@@ -39,64 +39,15 @@
   </footer>
 
   <script>
-    const CG_CATEGORIES = [3, 5, 6];
     const itemNumber = window.location.pathname.split('/catalogue/')[1];
 
     fetch(`/api/support-items/${itemNumber}`)
       .then(r => r.ok ? r.json() : Promise.reject(r.status))
-      .then(item => {
-        renderItem(item);
-        if (CG_CATEGORIES.includes(item.support_category.number)) {
-          loadCodeGuide(item.support_category.number);
-        }
-      })
+      .then(item => renderItem(item))
       .catch(() => {
         document.getElementById('item-content').innerHTML =
           `<div class="error">Item not found: ${itemNumber}</div>`;
       });
-
-    async function loadCodeGuide(categoryNumber) {
-      const res = await fetch(`/api/atcg/sections?category=${categoryNumber}`);
-      const sections = await res.json();
-      if (!sections.length) return;
-
-      // Fetch content for the most specific section (last in list)
-      // and the intro/claiming rules
-      const toFetch = sections.filter(s =>
-        ['introduction', 'general-claiming-rules'].includes(s.slug) === false
-      ).slice(0, 2).concat(
-        sections.filter(s => s.slug === 'general-claiming-rules')
-      );
-
-      const contents = await Promise.all(
-        toFetch.map(s => fetch(`/api/atcg/${s.slug}`).then(r => r.json()))
-      );
-
-      renderCodeGuidePanel(contents);
-    }
-
-    function renderCodeGuidePanel(sections) {
-      const container = document.getElementById('cg-panel-container');
-      if (!container) return;
-
-      const entries = sections.map(s => `
-        <div class="cg-section-entry">
-          <h4>${s.title}</h4>
-          <div class="cg-section-body">${s.content_html}</div>
-          <a class="cg-section-link" href="/api/atcg/${s.slug}" target="_blank">View full section as JSON ↗</a>
-        </div>
-      `).join('');
-
-      container.innerHTML = `
-        <div class="cg-panel">
-          <div class="cg-panel-header">
-            <span class="cg-panel-badge">+ Code Guide</span>
-            <span class="cg-panel-title">AT &amp; HM Code Guide — relevant guidance for this item</span>
-          </div>
-          <div class="cg-panel-sections">${entries}</div>
-        </div>
-      `;
-    }
 
     function priceTable(pl, unitLabel) {
       if (!pl) return '<p class="muted">No price limits — this item requires a quote.</p>';
@@ -174,8 +125,6 @@
           <h2>Price limits</h2>
           ${priceTable(item.price_limits, item.unit_label)}
         </div>
-
-        <div id="cg-panel-container"></div>
 
         <div class="item-section item-section--api">
           <h2>API access</h2>
