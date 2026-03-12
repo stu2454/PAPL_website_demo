@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Arrangements — NDIS Pricing Exemplar</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a href="/" style="text-decoration:none;color:inherit">
+          <span class="brand-label">NDIS Pricing</span>
+          <span class="brand-tag">Digital Exemplar</span>
+        </a>
+      </div>
+      <nav class="site-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/catalogue" class="nav-link">Support Catalogue</a>
+        <a href="/papl" class="nav-link active">Pricing Arrangements</a>
+        <a href="/docs" class="nav-link nav-link--api" target="_blank">API Docs ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="papl-layout">
+    <!-- Section sidebar -->
+    <aside class="papl-sidebar">
+      <div class="papl-sidebar-header">
+        <h2>NDIS Pricing Arrangements and Price Limits</h2>
+        <p class="muted">2025–26 · Version 1.1</p>
+      </div>
+      <nav id="sections-nav">
+        <div class="loading">Loading sections…</div>
+      </nav>
+    </aside>
+
+    <!-- Content area -->
+    <main class="papl-content">
+      <div id="section-header" class="papl-section-header" style="display:none">
+        <div class="papl-breadcrumb">
+          <span>Pricing Arrangements</span> <span>›</span> <span id="breadcrumb-title"></span>
+        </div>
+        <div class="papl-section-actions">
+          <a id="api-link" href="#" class="btn btn--ghost btn--sm" target="_blank">View as JSON ↗</a>
+        </div>
+      </div>
+
+      <div id="papl-body">
+        <div class="papl-welcome">
+          <h1>NDIS Pricing Arrangements and Price Limits 2025–26</h1>
+          <p>
+            This is the NDIS Pricing Arrangements and Price Limits (PAPL), rendered as navigable
+            web content from the same source data that produces the official Word document.
+          </p>
+          <p>
+            Select a section from the sidebar to begin reading, or start with the
+            <button class="link-btn" onclick="loadSection('introduction')">Introduction</button>.
+          </p>
+          <div class="papl-welcome-note">
+            <strong>This is a proof of concept.</strong> The content is extracted from the
+            official NDIS Pricing Arrangements and Price Limits 2025–26 v1.1.
+            Always refer to the <a href="https://www.ndis.gov.au/providers/pricing-arrangements" target="_blank">NDIS website</a>
+            for the authoritative current version.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- In-section headings nav (TOC) -->
+    <aside class="papl-toc" id="papl-toc" style="display:none">
+      <p class="toc-label">On this page</p>
+      <nav id="toc-nav"></nav>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>NDIA Pricing Team · Digital-first exemplar · Data sourced from NDIS Pricing Arrangements and Price Limits 2025-26 v1.1</p>
+    </div>
+  </footer>
+
+  <script src="/static/papl.js"></script>
+</body>
+</html>

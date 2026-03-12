@@ -1,0 +1,578 @@
+title: NDIS Pricing Arrangements and Price Limits 2025-26
+version: '1.1'
+source: NDIS Pricing Arrangements and Price Limits 2025-26 v1.1_0.docx
+sections:
+- title: untitled
+  slug: untitled
+  file: papl/untitled.md
+  headings: []
+- title: Introduction
+  slug: introduction
+  file: papl/introduction.md
+  headings:
+  - level: 1
+    text: Introduction
+    anchor: introduction
+  - level: 2
+    text: Price regulation documents
+    anchor: price-regulation-documents
+  - level: 3
+    text: NDIS Pricing Arrangements and Price Limits
+    anchor: ndis-pricing-arrangements-and-price-limits
+  - level: 3
+    text: NDIS Support Catalogue
+    anchor: ndis-support-catalogue
+  - level: 3
+    text: Addenda to the NDIS Pricing Arrangements and Price Limits
+    anchor: addenda-to-the-ndis-pricing-arrangements-and-price-limits
+  - level: 3
+    text: NDIS Pricing Arrangements for Specialist Disability Accommodation
+    anchor: ndis-pricing-arrangements-for-specialist-disability-accommodation
+  - level: 3
+    text: NDIS Assistive Technology, Home Modifications and Consumables Code Guide
+    anchor: ndis-assistive-technology-home-modifications-and-consumables-code-guide
+  - level: 3
+    text: NDIS Disability Support Worker Cost Model
+    anchor: ndis-disability-support-worker-cost-model
+  - level: 3
+    text: Priority of Interpretation
+    anchor: priority-of-interpretation
+  - level: 2
+    text: Applicability of Price Limits
+    anchor: applicability-of-price-limits
+  - level: 3
+    text: Agency Managed Participants
+    anchor: agency-managed-participants
+  - level: 3
+    text: Plan Managed Participants
+    anchor: plan-managed-participants
+  - level: 3
+    text: Self-managing Participants
+    anchor: self-managing-participants
+- title: untitled
+  slug: untitled-1
+  file: papl/untitled-1.md
+  headings: []
+- title: Support Purposes, Support Categories and Support Items
+  slug: support-purposes-support-categories-and-support-items
+  file: papl/support-purposes-support-categories-and-support-items.md
+  headings:
+  - level: 1
+    text: Support Purposes, Support Categories and Support Items
+    anchor: support-purposes-support-categories-and-support-items
+  - level: 2
+    text: Support Items
+    anchor: support-items
+  - level: 2
+    text: Support Purposes
+    anchor: support-purposes
+  - level: 2
+    text: Support Categories aligned to the NDIS Outcomes Framework
+    anchor: support-categories-aligned-to-the-ndis-outcomes-framework
+  - level: 2
+    text: Registration Groups
+    anchor: registration-groups
+  - level: 2
+    text: Units of Measure
+    anchor: units-of-measure
+- title: General Claiming Rules
+  slug: general-claiming-rules
+  file: papl/general-claiming-rules.md
+  headings:
+  - level: 1
+    text: General Claiming Rules
+    anchor: general-claiming-rules
+  - level: 2
+    text: Supports funded by the NDIS
+    anchor: supports-funded-by-the-ndis
+  - level: 2
+    text: Conflicts of Interest in the NDIS Provider Market
+    anchor: conflicts-of-interest-in-the-ndis-provider-market
+  - level: 2
+    text: Service Agreements
+    anchor: service-agreements
+  - level: 2
+    text: Service Bookings
+    anchor: service-bookings
+  - level: 2
+    text: My providers
+    anchor: my-providers
+  - level: 2
+    text: Claiming for support items that are subject to quotation
+    anchor: claiming-for-support-items-that-are-subject-to-quotation
+  - level: 2
+    text: Claiming for support items that have a price limit
+    anchor: claiming-for-support-items-that-have-a-price-limit
+  - level: 2
+    text: Claiming for support items that do not have a price limit
+    anchor: claiming-for-support-items-that-do-not-have-a-price-limit
+  - level: 2
+    text: Time of Day and Day of Week
+    anchor: time-of-day-and-day-of-week
+  - level: 3
+    text: Night-Time Sleepover supports
+    anchor: night-time-sleepover-supports
+  - level: 2
+    text: Claiming for Telehealth Services
+    anchor: claiming-for-telehealth-services
+  - level: 2
+    text: Claiming for Non-direct Services
+    anchor: claiming-for-non-direct-services
+  - level: 3
+    text: Non-Face-to-Face Support Provision
+    anchor: non-face-to-face-support-provision
+  - level: 3
+    text: Provider Travel
+    anchor: provider-travel
+  - level: 4
+    text: Provider Travel – Labour Costs (Time)
+    anchor: provider-travel-labour-costs-time
+  - level: 4
+    text: Provider Travel (in Remote and Very Remote Areas)
+    anchor: provider-travel-in-remote-and-very-remote-areas
+  - level: 4
+    text: Provider Travel – Non-Labour Costs
+    anchor: provider-travel-non-labour-costs
+  - level: 5
+    text: Support items
+    anchor: support-items
+  - level: 3
+    text: Short Notice Cancellations
+    anchor: short-notice-cancellations
+  - level: 4
+    text: Short Notice Cancellation – 2 clear business days
+    anchor: short-notice-cancellation-2-clear-business-days
+  - level: 4
+    text: Short Notice Cancellation – 7 days
+    anchor: short-notice-cancellation-7-days
+  - level: 3
+    text: NDIA Requested Reports
+    anchor: ndia-requested-reports
+  - level: 2
+    text: Claiming for Activity Based Transport
+    anchor: claiming-for-activity-based-transport
+  - level: 3
+    text: Activity Based Transport – Social, Economic and Community Participation
+      Supports
+    anchor: activity-based-transport-social-economic-and-community-participation-supports
+  - level: 4
+    text: Support items
+    anchor: support-items
+  - level: 3
+    text: Activity Based Transport – Capacity Building Supports
+    anchor: activity-based-transport-capacity-building-supports
+  - level: 4
+    text: Support items
+    anchor: support-items
+  - level: 2
+    text: Regional, Remote and Very Remote Areas
+    anchor: regional-remote-and-very-remote-areas
+  - level: 3
+    text: Modified Monash Model
+    anchor: modified-monash-model
+  - level: 4
+    text: Isolated Towns Modification
+    anchor: isolated-towns-modification
+  - level: 3
+    text: Pricing Arrangements in Regional, Remote and Very Remote Areas
+    anchor: pricing-arrangements-in-regional-remote-and-very-remote-areas
+  - level: 2
+    text: Claiming for Group-Based Supports
+    anchor: claiming-for-group-based-supports
+  - level: 2
+    text: Programs of Support
+    anchor: programs-of-support
+  - level: 2
+    text: Claiming for Centre Capital Costs
+    anchor: claiming-for-centre-capital-costs
+  - level: 2
+    text: Claiming for Establishment Fees for Personal Care/Participation Supports
+    anchor: claiming-for-establishment-fees-for-personal-careparticipation-supports
+  - level: 2
+    text: Claiming for Irregular SIL Supports
+    anchor: claiming-for-irregular-sil-supports
+  - level: 2
+    text: Claiming for more than one worker or therapist
+    anchor: claiming-for-more-than-one-worker-or-therapist
+  - level: 3
+    text: Shadow Shifts
+    anchor: shadow-shifts
+  - level: 3
+    text: Supervision / Specific Training for Therapy Assistants
+    anchor: supervision-specific-training-for-therapy-assistants
+  - level: 3
+    text: Case Conferences for Therapists
+    anchor: case-conferences-for-therapists
+  - level: 2
+    text: Other Considerations
+    anchor: other-considerations
+  - level: 3
+    text: Supports must be Reasonable and Necessary
+    anchor: supports-must-be-reasonable-and-necessary
+  - level: 3
+    text: Medicare and Insurance
+    anchor: medicare-and-insurance
+  - level: 3
+    text: Expenses Related to Recreational Pursuits
+    anchor: expenses-related-to-recreational-pursuits
+  - level: 3
+    text: Prepayments
+    anchor: prepayments
+  - level: 3
+    text: Subscription services
+    anchor: subscription-services
+  - level: 3
+    text: Co-payments for Capital items, including Assistive Technology
+    anchor: co-payments-for-capital-items-including-assistive-technology
+  - level: 3
+    text: Other Fees and Charges
+    anchor: other-fees-and-charges
+  - level: 3
+    text: Goods and Services Tax (GST)
+    anchor: goods-and-services-tax-gst
+- title: Special NDIS Pricing Arrangements
+  slug: special-ndis-pricing-arrangements
+  file: papl/special-ndis-pricing-arrangements.md
+  headings:
+  - level: 1
+    text: Special NDIS Pricing Arrangements
+    anchor: special-ndis-pricing-arrangements
+  - level: 2
+    text: High Intensity Supports
+    anchor: high-intensity-supports
+  - level: 2
+    text: Implementing Intensive and Complex Behaviour Supports
+    anchor: implementing-intensive-and-complex-behaviour-supports
+  - level: 2
+    text: Disability-Related Health Supports
+    anchor: disability-related-health-supports
+- title: untitled
+  slug: untitled-2
+  file: papl/untitled-2.md
+  headings: []
+- title: Core – Assistance with Daily Life
+  slug: core-assistance-with-daily-life
+  file: papl/core-assistance-with-daily-life.md
+  headings:
+  - level: 1
+    text: Core – Assistance with Daily Life
+    anchor: core-assistance-with-daily-life
+  - level: 2
+    text: Daily Personal Activities
+    anchor: daily-personal-activities
+  - level: 3
+    text: Assistance with Self Care Activities
+    anchor: assistance-with-self-care-activities
+  - level: 3
+    text: Assistance with Self Care Activities – Night-Time Sleepover Support
+    anchor: assistance-with-self-care-activities-night-time-sleepover-support
+  - level: 3
+    text: Assistance from Live-in Carer
+    anchor: assistance-from-live-in-carer
+  - level: 3
+    text: Assistance with Personal Domestic Activities
+    anchor: assistance-with-personal-domestic-activities
+  - level: 3
+    text: On-Call Overnight Monitoring
+    anchor: on-call-overnight-monitoring
+  - level: 2
+    text: High Intensity Daily Personal Activities
+    anchor: high-intensity-daily-personal-activities
+  - level: 3
+    text: Assistance with Self Care Activities
+    anchor: assistance-with-self-care-activities
+  - level: 3
+    text: Specialised Home-Based Assistance for a Child
+    anchor: specialised-home-based-assistance-for-a-child
+  - level: 2
+    text: Assistance with household tasks
+    anchor: assistance-with-household-tasks
+  - level: 3
+    text: Assistance with Household Tasks
+    anchor: assistance-with-household-tasks
+  - level: 3
+    text: Linen Service
+    anchor: linen-service
+  - level: 3
+    text: Preparation and Delivery of Meals
+    anchor: preparation-and-delivery-of-meals
+  - level: 2
+    text: Assistance with Daily Life Tasks in a Group or Shared Living Arrangement
+    anchor: assistance-with-daily-life-tasks-in-a-group-or-shared-living-arrangement
+  - level: 3
+    text: Assistance in Shared Living Arrangements – Supported Independent Living
+    anchor: assistance-in-shared-living-arrangements-supported-independent-living
+  - level: 4
+    text: Weekly claiming
+    anchor: weekly-claiming
+  - level: 4
+    text: Hourly claiming
+    anchor: hourly-claiming
+  - level: 3
+    text: Short Term Accommodation and Assistance (including the provision of respite
+      care)
+    anchor: short-term-accommodation-and-assistance-including-the-provision-of-respite-care
+  - level: 4
+    text: Standard Support Items
+    anchor: standard-support-items
+  - level: 4
+    text: Additional Hours Support Items
+    anchor: additional-hours-support-items
+  - level: 3
+    text: Medium Term Accommodation (MTA)
+    anchor: medium-term-accommodation-mta
+  - level: 3
+    text: Onsite Shared Supports in SDA
+    anchor: onsite-shared-supports-in-sda
+  - level: 3
+    text: Other living arrangements
+    anchor: other-living-arrangements
+  - level: 2
+    text: Individualised Living Options
+    anchor: individualised-living-options
+  - level: 3
+    text: Exploration and Design
+    anchor: exploration-and-design
+  - level: 3
+    text: Support Model
+    anchor: support-model
+  - level: 2
+    text: Capacity Building and Training in Self-Management and Plan Management
+    anchor: capacity-building-and-training-in-self-management-and-plan-management
+  - level: 2
+    text: Disability Related Health Supports
+    anchor: disability-related-health-supports
+  - level: 3
+    text: Nursing Supports
+    anchor: nursing-supports
+  - level: 3
+    text: Therapy Supports and Early Childhood Supports
+    anchor: therapy-supports-and-early-childhood-supports
+- title: Core – Transport
+  slug: core-transport
+  file: papl/core-transport.md
+  headings:
+  - level: 1
+    text: Core – Transport
+    anchor: core-transport
+  - level: 2
+    text: General Transport
+    anchor: general-transport
+  - level: 2
+    text: Specialised Transport
+    anchor: specialised-transport
+- title: untitled
+  slug: untitled-3
+  file: papl/untitled-3.md
+  headings: []
+- title: Core – Consumables
+  slug: core-consumables
+  file: papl/core-consumables.md
+  headings:
+  - level: 1
+    text: Core – Consumables
+    anchor: core-consumables
+- title: Core – Assistance with Social, Economic and Community Participation
+  slug: core-assistance-with-social-economic-and-community-participation
+  file: papl/core-assistance-with-social-economic-and-community-participation.md
+  headings:
+  - level: 1
+    text: Core – Assistance with Social, Economic and Community Participation
+    anchor: core-assistance-with-social-economic-and-community-participation
+  - level: 2
+    text: Assistance to Access Community, Social and Recreational Activities
+    anchor: assistance-to-access-community-social-and-recreational-activities
+  - level: 3
+    text: Participation in Community, Social and Civic Activities
+    anchor: participation-in-community-social-and-civic-activities
+  - level: 3
+    text: Participation in Community, Social and Civic Activities – High Intensity
+      Supports
+    anchor: participation-in-community-social-and-civic-activities-high-intensity-supports
+  - level: 3
+    text: Community, Social and Recreational Activities
+    anchor: community-social-and-recreational-activities
+  - level: 2
+    text: Group and Centre Based Activities
+    anchor: group-and-centre-based-activities
+  - level: 3
+    text: Group and Centre Based Activities – Standard
+    anchor: group-and-centre-based-activities-standard
+  - level: 3
+    text: Group and Centre Based Activities – High Intensity
+    anchor: group-and-centre-based-activities-high-intensity
+  - level: 2
+    text: Supports in Employment
+    anchor: supports-in-employment
+  - level: 3
+    text: Specialised Supported Employment
+    anchor: specialised-supported-employment
+- title: Capital – Assistive Technology
+  slug: capital-assistive-technology
+  file: papl/capital-assistive-technology.md
+  headings:
+  - level: 1
+    text: Capital – Assistive Technology
+    anchor: capital-assistive-technology
+- title: Capital – Home Modifications and Specialist Disability Accommodation
+  slug: capital-home-modifications-and-specialist-disability-accommodation
+  file: papl/capital-home-modifications-and-specialist-disability-accommodation.md
+  headings:
+  - level: 1
+    text: Capital – Home Modifications and Specialist Disability Accommodation
+    anchor: capital-home-modifications-and-specialist-disability-accommodation
+  - level: 2
+    text: Home Modifications
+    anchor: home-modifications
+  - level: 2
+    text: Specialist Disability Accommodation (SDA)
+    anchor: specialist-disability-accommodation-sda
+- title: Capacity Building – Support Coordination
+  slug: capacity-building-support-coordination
+  file: papl/capacity-building-support-coordination.md
+  headings:
+  - level: 1
+    text: Capacity Building – Support Coordination
+    anchor: capacity-building-support-coordination
+  - level: 2
+    text: 'Level 1: Support Connection'
+    anchor: level-1-support-connection
+  - level: 2
+    text: 'Level 2: Coordination of Supports'
+    anchor: level-2-coordination-of-supports
+  - level: 2
+    text: 'Level 3: Specialist Support Coordination'
+    anchor: level-3-specialist-support-coordination
+  - level: 2
+    text: Psychosocial Recovery Coaches
+    anchor: psychosocial-recovery-coaches
+- title: Capacity Building – Improved Living Arrangements
+  slug: capacity-building-improved-living-arrangements
+  file: papl/capacity-building-improved-living-arrangements.md
+  headings:
+  - level: 1
+    text: Capacity Building – Improved Living Arrangements
+    anchor: capacity-building-improved-living-arrangements
+  - level: 2
+    text: Assistance with Accommodation and Tenancy Obligations
+    anchor: assistance-with-accommodation-and-tenancy-obligations
+- title: Capacity Building – Increased Social and Community Participation
+  slug: capacity-building-increased-social-and-community-participation
+  file: papl/capacity-building-increased-social-and-community-participation.md
+  headings:
+  - level: 1
+    text: Capacity Building – Increased Social and Community Participation
+    anchor: capacity-building-increased-social-and-community-participation
+  - level: 2
+    text: Assistance in Coordinating or Managing Life Stages, Transitions and Supports
+    anchor: assistance-in-coordinating-or-managing-life-stages-transitions-and-supports
+  - level: 2
+    text: Development of Daily Living and Life Skills
+    anchor: development-of-daily-living-and-life-skills
+  - level: 2
+    text: Innovative Community Participation
+    anchor: innovative-community-participation
+  - level: 2
+    text: Community Participation Activities
+    anchor: community-participation-activities
+- title: Capacity Building – Finding and Keeping a Job
+  slug: capacity-building-finding-and-keeping-a-job
+  file: papl/capacity-building-finding-and-keeping-a-job.md
+  headings:
+  - level: 1
+    text: Capacity Building – Finding and Keeping a Job
+    anchor: capacity-building-finding-and-keeping-a-job
+  - level: 2
+    text: Employment Related Assessment, Counselling and Advice
+    anchor: employment-related-assessment-counselling-and-advice
+  - level: 2
+    text: Employment Assistance including youth aged 15 to 25.
+    anchor: employment-assistance-including-youth-aged-15-to-25
+- title: Capacity Building – Improved Relationships
+  slug: capacity-building-improved-relationships
+  file: papl/capacity-building-improved-relationships.md
+  headings:
+  - level: 1
+    text: Capacity Building – Improved Relationships
+    anchor: capacity-building-improved-relationships
+  - level: 2
+    text: Specialist Behavioural Intervention Support
+    anchor: specialist-behavioural-intervention-support
+  - level: 2
+    text: Individual Social Skills Development
+    anchor: individual-social-skills-development
+- title: Capacity Building – Improved Health and Wellbeing
+  slug: capacity-building-improved-health-and-wellbeing
+  file: papl/capacity-building-improved-health-and-wellbeing.md
+  headings:
+  - level: 1
+    text: Capacity Building – Improved Health and Wellbeing
+    anchor: capacity-building-improved-health-and-wellbeing
+  - level: 2
+    text: Physical Wellbeing Activities
+    anchor: physical-wellbeing-activities
+  - level: 2
+    text: Dietetics
+    anchor: dietetics
+- title: Capacity Building – Improved Learning
+  slug: capacity-building-improved-learning
+  file: papl/capacity-building-improved-learning.md
+  headings:
+  - level: 1
+    text: Capacity Building – Improved Learning
+    anchor: capacity-building-improved-learning
+  - level: 2
+    text: Transition through School and to Further Education
+    anchor: transition-through-school-and-to-further-education
+- title: Capacity Building – Improved Life Choices
+  slug: capacity-building-improved-life-choices
+  file: papl/capacity-building-improved-life-choices.md
+  headings:
+  - level: 1
+    text: Capacity Building – Improved Life Choices
+    anchor: capacity-building-improved-life-choices
+  - level: 2
+    text: Plan Management – Financial Administration Supports
+    anchor: plan-management-financial-administration-supports
+- title: untitled
+  slug: untitled-4
+  file: papl/untitled-4.md
+  headings: []
+- title: Capacity Building – Improved Daily Living
+  slug: capacity-building-improved-daily-living
+  file: papl/capacity-building-improved-daily-living.md
+  headings:
+  - level: 1
+    text: Capacity Building – Improved Daily Living
+    anchor: capacity-building-improved-daily-living
+  - level: 2
+    text: Early Intervention Supports for Early Childhood Supports – younger than
+      9
+    anchor: early-intervention-supports-for-early-childhood-supports-younger-than-9
+  - level: 2
+    text: Therapy Supports (9 or older)
+    anchor: therapy-supports-9-or-older
+  - level: 3
+    text: Community Engagement Assistance
+    anchor: community-engagement-assistance
+  - level: 2
+    text: Hearing Supports
+    anchor: hearing-supports
+  - level: 2
+    text: Multidisciplinary Team Supports
+    anchor: multidisciplinary-team-supports
+  - level: 2
+    text: Delivery of Disability Related Health Supports by a Nurse
+    anchor: delivery-of-disability-related-health-supports-by-a-nurse
+  - level: 2
+    text: Specialised Driver Training Support
+    anchor: specialised-driver-training-support
+  - level: 2
+    text: Other Supports
+    anchor: other-supports
+  - level: 2
+    text: Assistive Technology Mentors (AT Mentors)
+    anchor: assistive-technology-mentors-at-mentors
+  - level: 2
+    text: 'Appendix A: History of Changes'
+    anchor: appendix-a-history-of-changes

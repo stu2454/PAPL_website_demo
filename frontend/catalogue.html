@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Catalogue — NDIS Pricing Exemplar</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a href="/" style="text-decoration:none;color:inherit">
+          <span class="brand-label">NDIS Pricing</span>
+          <span class="brand-tag">Digital Exemplar</span>
+        </a>
+      </div>
+      <nav class="site-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/catalogue" class="nav-link active">Support Catalogue</a>
+        <a href="/papl" class="nav-link">Pricing Arrangements</a>
+        <a href="/docs" class="nav-link nav-link--api" target="_blank">API Docs ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-layout">
+    <!-- Sidebar filters -->
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <label class="filter-label" for="search-input">Search</label>
+        <input type="text" id="search-input" class="filter-input" placeholder="Name or item number…" autocomplete="off">
+      </div>
+
+      <div class="sidebar-section">
+        <label class="filter-label" for="category-select">Support category</label>
+        <select id="category-select" class="filter-select">
+          <option value="">All categories</option>
+        </select>
+      </div>
+
+      <div class="sidebar-section">
+        <label class="filter-label" for="reg-group-select">Registration group</label>
+        <select id="reg-group-select" class="filter-select">
+          <option value="">All groups</option>
+        </select>
+      </div>
+
+      <div class="sidebar-section">
+        <label class="filter-label" for="type-select">Type</label>
+        <select id="type-select" class="filter-select">
+          <option value="">All types</option>
+          <option value="Price Limited Supports">Price limited</option>
+          <option value="Quotable Supports">Quotable</option>
+          <option value="Unit Price = $1">Unit price = $1</option>
+        </select>
+      </div>
+
+      <div class="sidebar-section">
+        <label class="filter-label">
+          <input type="checkbox" id="legacy-check"> Include legacy items
+        </label>
+      </div>
+
+      <div class="sidebar-section">
+        <button id="reset-btn" class="btn btn--ghost btn--sm">Reset filters</button>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <div class="content-header">
+        <div>
+          <h1 class="page-title">Support Catalogue</h1>
+          <p class="result-count" id="result-count">Loading…</p>
+        </div>
+        <div class="content-header-actions">
+          <a href="/api/support-items?limit=200" class="btn btn--ghost btn--sm" target="_blank">View as JSON</a>
+        </div>
+      </div>
+
+      <div id="items-container">
+        <div class="loading">Loading support items…</div>
+      </div>
+
+      <div class="pagination" id="pagination"></div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>NDIA Pricing Team · Digital-first exemplar · Data sourced from NDIS Support Catalogue 2025-26 v1.1</p>
+    </div>
+  </footer>
+
+  <script src="/static/catalogue.js"></script>
+</body>
+</html>

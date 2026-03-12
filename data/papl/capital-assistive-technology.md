@@ -1,0 +1,3 @@
+# Capital – Assistive Technology
+This support category includes all aids or equipment supports that assist participants to live independently or assist a carer to support the participant. It also includes related delivery, set-up and some training support items. Usually, providing independent advice, guidance, trials, set-up and training (not bundled with the sale of an item) is funded through a capacity building support.
+Information on the pricing arrangements for Assistive Technology can be found in the Assistive Technology, Home Modifications and Consumables Code Guide on the NDIS website: www.ndis.gov.au/providers/pricing-arrangements.

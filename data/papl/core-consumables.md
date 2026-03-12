@@ -1,0 +1,3 @@
+# Core – Consumables
+Consumables are a support category available to assist participants with purchasing everyday use items. Supports such as Continence and Home Enteral Nutrition (HEN) products are included in this category.
+Information on the pricing arrangements for Consumables can be found in the Assistive Technology and Consumables Code Guide on the NDIS website: www.ndis.gov.au/providers/pricing-arrangements.

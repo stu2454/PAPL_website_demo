@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NDIS Pricing — Digital-First Exemplar</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <span class="brand-label">NDIS Pricing</span>
+        <span class="brand-tag">Digital Exemplar</span>
+      </div>
+      <nav class="site-nav">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/catalogue" class="nav-link">Support Catalogue</a>
+        <a href="/papl" class="nav-link">Pricing Arrangements</a>
+        <a href="/docs" class="nav-link nav-link--api" target="_blank">API Docs ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-eyebrow">Proof of concept · NDIA Pricing Team</p>
+          <h1 class="hero-heading">Pricing artefacts,<br>built for the digital age</h1>
+          <p class="hero-lead">
+            The NDIS Support Catalogue and Pricing Arrangements are among the most-downloaded
+            documents on the NDIS website. This exemplar shows what becomes possible when
+            we treat pricing data as structured information — not static files.
+          </p>
+          <div class="hero-actions">
+            <a href="/catalogue" class="btn btn--primary">Browse Support Catalogue</a>
+            <a href="/papl" class="btn btn--secondary">Read Pricing Arrangements</a>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number" id="stat-items">635</span>
+            <span class="stat-label">Support items</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">15</span>
+            <span class="stat-label">Support categories</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">35</span>
+            <span class="stat-label">Registration groups</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">8</span>
+            <span class="stat-label">Jurisdictions</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What this enables -->
+    <section class="features">
+      <div class="container">
+        <h2 class="section-heading">One source of truth. Many ways to access it.</h2>
+        <p class="section-lead">
+          Today, the Support Catalogue (Excel) and Pricing Arrangements (Word) are the master copy.
+          In a digital-first model, structured data is the master — and these formats are generated from it.
+        </p>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Search &amp; filter</h3>
+            <p>Find the exact support item you need instantly. Filter by category, registration group,
+            or claiming rules. No more scrolling through 600-row spreadsheets.</p>
+            <a href="/catalogue" class="feature-link">Browse catalogue →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📖</div>
+            <h3>Readable documentation</h3>
+            <p>The Pricing Arrangements rendered as navigable web content — with a persistent
+            sidebar, anchor links, and proper formatting. Not a 100-page Word download.</p>
+            <a href="/papl" class="feature-link">Read the PAPL →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>API access</h3>
+            <p>Large providers and software vendors can query pricing data programmatically.
+            Full OpenAPI specification, filterable endpoints, structured JSON responses.</p>
+            <a href="/docs" class="feature-link" target="_blank">Explore the API →</a>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📄</div>
+            <h3>Still generates static files</h3>
+            <p>Digital-first doesn't mean abandoning static documents. Word, PDF, and Excel
+            can still be generated from the same source data — they're just no longer the master copy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Before / After -->
+    <section class="compare">
+      <div class="container">
+        <h2 class="section-heading">Current state vs digital-first</h2>
+        <div class="compare-grid">
+          <div class="compare-col compare-col--before">
+            <h3 class="compare-heading">Today</h3>
+            <ul class="compare-list">
+              <li>Team maintains a Word doc + Excel file</li>
+              <li>Published to website as static downloads</li>
+              <li>Users search manually within files</li>
+              <li>Version history is filename-based (<code>v1.1_0.docx</code>)</li>
+              <li>Provider portals re-key data from the Excel</li>
+              <li>Every update requires re-publishing all files</li>
+              <li>No way to embed pricing in other systems without manual effort</li>
+            </ul>
+          </div>
+          <div class="compare-col compare-col--after">
+            <h3 class="compare-heading">Digital-first</h3>
+            <ul class="compare-list">
+              <li>Structured data (JSON/YAML/Markdown) is the master copy</li>
+              <li>Web interface, API, and static files all generated from the same source</li>
+              <li>Real-time search and filter for all users</li>
+              <li>Version history in Git — full audit trail, reviewable diffs</li>
+              <li>Provider portals query the API directly</li>
+              <li>Publish once, serve everywhere</li>
+              <li>Machine-readable from day one — no re-keying required</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick search CTA -->
+    <section class="quick-search">
+      <div class="container">
+        <h2>Try it now</h2>
+        <p>Search across all 635 current support items.</p>
+        <div class="search-bar">
+          <input type="text" id="quick-search-input" placeholder="e.g. personal care, 01_002, support coordination…" autocomplete="off">
+          <button id="quick-search-btn" class="btn btn--primary">Search</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>NDIA Pricing Team · Digital-first exemplar · Data sourced from NDIS Support Catalogue 2025-26 v1.1</p>
+      <p><a href="/docs" target="_blank">API Documentation</a> · <a href="https://www.ndis.gov.au/providers/pricing-arrangements" target="_blank">NDIS Website</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('quick-search-btn').addEventListener('click', () => {
+      const q = document.getElementById('quick-search-input').value.trim();
+      if (q) window.location.href = `/catalogue?q=${encodeURIComponent(q)}`;
+    });
+    document.getElementById('quick-search-input').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') document.getElementById('quick-search-btn').click();
+    });
+  </script>
+</body>
+</html>

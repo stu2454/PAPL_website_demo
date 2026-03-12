@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Item — NDIS Pricing Exemplar</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="header-brand">
+        <a href="/" style="text-decoration:none;color:inherit">
+          <span class="brand-label">NDIS Pricing</span>
+          <span class="brand-tag">Digital Exemplar</span>
+        </a>
+      </div>
+      <nav class="site-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/catalogue" class="nav-link active">Support Catalogue</a>
+        <a href="/papl" class="nav-link">Pricing Arrangements</a>
+        <a href="/docs" class="nav-link nav-link--api" target="_blank">API Docs ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <a href="/catalogue" class="back-link">← Back to catalogue</a>
+    <div id="item-content">
+      <div class="loading">Loading…</div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>NDIA Pricing Team · Digital-first exemplar · Data sourced from NDIS Support Catalogue 2025-26 v1.1</p>
+    </div>
+  </footer>
+
+  <script>
+    const itemNumber = window.location.pathname.split('/catalogue/')[1];
+
+    fetch(`/api/support-items/${itemNumber}`)
+      .then(r => r.ok ? r.json() : Promise.reject(r.status))
+      .then(renderItem)
+      .catch(err => {
+        document.getElementById('item-content').innerHTML =
+          `<div class="error">Item not found: ${itemNumber}</div>`;
+      });
+
+    function priceTable(pl) {
+      if (!pl) return '<p class="muted">No price limits — this item requires a quote.</p>';
+      const states = ['ACT','NSW','NT','QLD','SA','TAS','VIC','WA'];
+      const stateRows = states
+        .filter(s => pl[s] != null)
+        .map(s => `<tr><td>${s}</td><td class="price">$${pl[s].toFixed(2)}</td></tr>`)
+        .join('');
+      const remoteRows = [
+        pl.remote != null ? `<tr><td>Remote</td><td class="price">$${pl.remote.toFixed(2)}</td></tr>` : '',
+        pl.very_remote != null ? `<tr><td>Very remote</td><td class="price">$${pl.very_remote.toFixed(2)}</td></tr>` : '',
+      ].join('');
+      return `
+        <table class="price-table">
+          <thead><tr><th>Jurisdiction</th><th>Price limit (per ${document.querySelector('.unit-label')?.textContent || 'unit'})</th></tr></thead>
+          <tbody>${stateRows}${remoteRows}</tbody>
+        </table>`;
+    }
+
+    function flagBadge(val, label) {
+      if (val === true) return `<span class="badge badge--yes">${label}</span>`;
+      if (val === false) return `<span class="badge badge--no">${label} ✗</span>`;
+      return `<span class="badge badge--na">${label} N/A</span>`;
+    }
+
+    function renderItem(item) {
+      document.title = `${item.support_item_number} — NDIS Pricing`;
+      const legacyBanner = item.legacy
+        ? '<div class="alert alert--warning">This is a legacy (deactivated) support item. New service bookings should not be created against it.</div>'
+        : '';
+      const typeBadge = item.type
+        ? `<span class="type-badge">${item.type}</span>`
+        : '';
+
+      document.getElementById('item-content').innerHTML = `
+        ${legacyBanner}
+        <div class="item-header">
+          <div>
+            <p class="item-number">${item.support_item_number}</p>
+            <h1 class="item-name">${item.name}</h1>
+          </div>
+          <div class="item-meta-tags">
+            ${typeBadge}
+            ${item.requires_quote ? '<span class="type-badge type-badge--quote">Requires quote</span>' : ''}
+          </div>
+        </div>
+
+        <div class="item-grid">
+          <div class="item-section">
+            <h2>Classification</h2>
+            <dl class="detail-list">
+              <dt>Support category</dt>
+              <dd>${item.support_category.number} — ${item.support_category.name}</dd>
+              <dt>Registration group</dt>
+              <dd>${item.registration_group.number} — ${item.registration_group.name}</dd>
+              <dt>Unit of measure</dt>
+              <dd><span class="unit-label">${item.unit_label}</span> (${item.unit})</dd>
+              <dt>Effective from</dt>
+              <dd>${item.effective_from || '—'}</dd>
+              ${item.effective_to ? `<dt>Effective to</dt><dd>${item.effective_to}</dd>` : ''}
+            </dl>
+          </div>
+
+          <div class="item-section">
+            <h2>Claiming rules</h2>
+            <div class="badges-group">
+              ${flagBadge(item.claiming_rules.non_face_to_face, 'Non-face-to-face')}
+              ${flagBadge(item.claiming_rules.provider_travel, 'Provider travel')}
+              ${flagBadge(item.claiming_rules.short_notice_cancellations, 'Short notice cancellation')}
+              ${flagBadge(item.claiming_rules.ndia_requested_reports, 'NDIA requested reports')}
+              ${flagBadge(item.claiming_rules.irregular_sil_supports, 'Irregular SIL')}
+            </div>
+          </div>
+        </div>
+
+        <div class="item-section">
+          <h2>Price limits</h2>
+          ${priceTable(item.price_limits)}
+        </div>
+
+        <div class="item-section item-section--api">
+          <h2>API access</h2>
+          <p>This item is available directly via the API:</p>
+          <code class="api-url">/api/support-items/${item.support_item_number}</code>
+          <a href="/api/support-items/${item.support_item_number}" class="btn btn--ghost btn--sm" target="_blank">View JSON ↗</a>
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>
