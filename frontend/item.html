@@ -22,13 +22,6 @@
         <a href="/explainer" class="nav-link">How It Works</a>
         <a href="/docs" class="nav-link nav-link--api" target="_blank">API Docs ↗</a>
       </nav>
-      <div class="cg-toggle-wrap">
-        <span class="cg-toggle-label">+ Code Guide</span>
-        <label class="cg-toggle" title="Show AT &amp; HM Code Guide content">
-          <input type="checkbox" id="cg-toggle-input">
-          <span class="cg-toggle-slider"></span>
-        </label>
-      </div>
     </div>
   </header>
 
@@ -45,20 +38,14 @@
     </div>
   </footer>
 
-  <script src="/static/toggle.js"></script>
   <script>
     const CG_CATEGORIES = [3, 5, 6];
     const itemNumber = window.location.pathname.split('/catalogue/')[1];
 
-    // Load item, then conditionally load Code Guide sections
     fetch(`/api/support-items/${itemNumber}`)
       .then(r => r.ok ? r.json() : Promise.reject(r.status))
       .then(item => {
         renderItem(item);
-        initToggle(() => {
-          const panel = document.getElementById('cg-panel-container');
-          if (panel) panel.style.display = cgEnabled() ? '' : 'none';
-        });
         if (CG_CATEGORIES.includes(item.support_category.number)) {
           loadCodeGuide(item.support_category.number);
         }
@@ -109,7 +96,6 @@
           <div class="cg-panel-sections">${entries}</div>
         </div>
       `;
-      container.style.display = cgEnabled() ? '' : 'none';
     }
 
     function priceTable(pl, unitLabel) {
